@@ -1,0 +1,148 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:five="http://namespaces.zope.org/five"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           xmlns:i18n="http://namespaces.zope.org/i18n"
+           i18n_domain="calcmf"
+           > 
+
+  <include file="../CalZope/permissions.zcml" />
+  
+  <i18n:registerTranslations directory="locales" />
+
+  <five:localsite
+    class="Products.CMFDefault.Portal.CMFSite" />
+
+  <!-- The events for the calendar /-->
+  
+  <five:implements
+    class="Products.CalZope.zopecal.Calendar"
+    interface=".interfaces.ICalendarActionable"
+    />
+
+  <five:implements
+    class="Products.CalZope.zopecal.Month"
+    interface=".interfaces.ICalendarActionable"
+    />
+
+  <five:implements
+    class="Products.CalZope.zopecal.Week"
+    interface=".interfaces.ICalendarActionable"
+    />
+
+  <five:implements
+    class="Products.CalZope.zopecal.Day"
+    interface=".interfaces.ICalendarActionable"
+    />
+
+  <browser:menuItem
+    menu="object"
+    title="calendar_menu_edit_calendar"
+    for=".interfaces.ICalendarActionable"
+    action="edit.html"
+    permission="calendar.EditCalendar"
+    />
+
+  <browser:menuItem
+    menu="object"
+    title="calendar_menu_add_event"
+    for=".interfaces.ICalendarActionable"
+    action="+/addevent.html"
+    permission="calendar.CreateEvents"
+    />
+
+  <browser:menuItem
+    menu="object"
+    title="calendar_menu_meeting_helper"
+    for=".interfaces.ICalendarActionable"
+    action="meetinghelper.html"
+    permission="calendar.CreateEvents"
+  />
+
+  <browser:menuItem
+    menu="object"
+    title="calendar_menu_icalendar_export"
+    for=".interfaces.ICalendarActionable"
+    action="calendar.ics?disable_cookie_login__=1"
+    permission="calendar.ViewCalendar"
+  />
+
+  <browser:menuItem
+    menu="object"
+    title="calendar_menu_icalendar_import"
+    for=".interfaces.ICalendarActionable"
+    action="import.html"
+    permission="calendar.CreateEvents"
+  />
+
+  <!-- Event actions -->
+
+  <browser:menuItem
+    for="calcore.interfaces.ICalendarEvent"
+    title="calendar_menu_edit"
+    action="edit.html"
+    menu="object"
+    permission="calendar.ModifyEvent"
+    />
+
+  <browser:menuItem
+    for="calcore.interfaces.IInvitableCalendarEvent"
+    title="calendar_menu_attendees"
+    action="attendees.html"
+    menu="object"
+    permission="calendar.ManageAttendees"
+    />
+
+  <browser:menuItem
+    for="calcore.interfaces.ICalendarEvent"
+    title="calendar_menu_recurrence"
+    action="recurrence.html"
+    menu="object"
+    permission="calendar.ModifyEvent"
+    />
+
+  <browser:menuItem
+    for="calcore.interfaces.ICalendarEvent"
+    title="calendar_menu_delete"
+    action="delete.html"
+    menu="object"
+    permission="calendar.DeleteEvent"
+    />
+
+  <browser:resource
+    file="calcmf.png"
+    name="calcmf.png"
+    permission="zope.Public"
+    />
+
+  <!-- Only here so that it will find the calcmf.png resource, above /-->
+  <five:traversable
+    class="Products.CMFDefault.Portal.CMFSite" />
+    
+  <!-- Any object that has views must implement IDynamicType to get hold of
+       the CMF template. It's a CMF thing. /-->
+
+  <five:implements 
+    class="Products.CalZope.zopecal.Day" 
+    interface="Products.CMFCore.interfaces.IDynamicType" />
+    
+  <five:implements 
+    class="Products.CalZope.zopecal.Month" 
+    interface="Products.CMFCore.interfaces.IDynamicType" />
+
+  <five:implements 
+    class="Products.CalZope.zopecal.Week" 
+    interface="Products.CMFCore.interfaces.IDynamicType" />
+
+  <five:implements 
+    class="Products.CalZope.zopecal.Year" 
+    interface="Products.CMFCore.interfaces.IDynamicType" />
+
+  <five:implements 
+    class="Products.CalZope.storage.ZODBEvent" 
+    interface="Products.CMFCore.interfaces.IDynamicType" />
+
+  <five:implements 
+    class="Products.CalZope.browser.adding.CalendarEventAdding" 
+    interface="Products.CMFCore.interfaces.IDynamicType" />
+
+</configure>

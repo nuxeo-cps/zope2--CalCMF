@@ -1,0 +1,82 @@
+# translation of fr.po to
+# Gettext Message File for default.
+# Your Name <your@email>, Year
+# Dragos Ivan <div@nuxeo.com>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: fr\n"
+"POT-Creation-Date: 2005-09-28 19:31default\n"
+"PO-Revision-Date: 2005-06-30 17:49+0300\n"
+"Last-Translator: Dragos Ivan <div@nuxeo.com>\n"
+"Language-Team: Francais <fr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Preferred-encodings: latin9\n"
+"Language-Code: fr\n"
+"Language-Name: French\n"
+"Domain: default\n"
+"X-Generator: KBabel 1.10.1\n"
+
+msgid "calendar_menu_add_event"
+msgstr "Créer un événement"
+
+msgid "calendar_menu_edit_calendar"
+msgstr "Modifier l'agenda"
+
+msgid "calendar_menu_meeting_helper"
+msgstr "Organiser une réunion"
+
+msgid "calendar_menu_icalendar_export"
+msgstr "Export iCalendar"
+
+msgid "calendar_menu_icalendar_import"
+msgstr "Import iCalendar"
+
+msgid "calendar_menu_view_calendar"
+msgstr "Voir l'agenda"
+
+msgid "calendar_menu_edit"
+msgstr "Modifier"
+
+msgid "calendar_menu_attendees"
+msgstr "Participants"
+
+msgid "calendar_menu_recurrence"
+msgstr "Récurrence"
+
+msgid "calendar_menu_delete"
+msgstr "Supprimer"
+
+msgid "label_calendar_event_decline"
+msgstr "Refuser un événement"
+
+msgid "label_calendar_event_accept"
+msgstr "Accepter un événement"
+
+msgid "label_calendar_event_invite"
+msgstr "Inviter"
+
+msgid "label_calendar_event_tentative"
+msgstr "A confirmer"
+
+msgid "label_calendar_event_delegate"
+msgstr "Déléguer"
+
+msgid "label_calendar_event_deleted"
+msgstr "Evénement supprimé"
+
+msgid "label_calendar_event_modify"
+msgstr "Modifier"
+
+msgid "label_calendar_event_status_change"
+msgstr "Statut de l'événement modifié"
+
+msgid "Personal calendar for %(title)s"
+msgstr "Agenda individuel de %(title)s"
+
+msgid "Workspace calendar %(title)s for %(parent)s"
+msgstr "Agenda %(title)s dans l'espace %(parent)s"
+
+msgid "Resource calendar %(title)s for %(parent)s"
+msgstr "Agenda de la ressource %(title)s de l'espace %(parent)s"

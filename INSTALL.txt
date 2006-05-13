@@ -1,0 +1,46 @@
+Requirements
+============
+This software uses several innovative development paradigms. As a result it 
+has rather overwhelming installation instructions. Sorry about that.
+
+You will need:
+
+* Zope 2.9.x. The last version as of this release is 2.9.2.
+
+* CMF 1.5.6 or Plone 2.5.
+
+The following requirements are usually included in the distribution, and
+is recorded here for documentation purposes:
+
+* CalCore 2.0.1.
+
+* CalZope 2.3.0.
+
+* iCalendar 0.11. 
+   http://codespeak.net/icalendar/iCalendar-0.10.tgz
+
+* CMFonFive 1.3.2
+
+
+Intallation
+===========
+You must first install Zope and CMF or Plone. Then you download and install
+the CalCMF bundle, called CalCMF-bundle-0.9.0-1.tgz. Extract it with 
+
+  tar zvfx CalCMF-bundle-0.9.0-1.tgz
+
+Move the files into your Zope instances Products directory:
+
+  mv CalCMF-bundle-0.9.0/* <zope-instace-home>/Products
+
+Restart Zope.
+
+You can either install CalCMF with CMFQuickInstaller (included with Plone) 
+or by createing an External Method, with the parameters:
+
+  Module Name: CalZope.install
+  Function Name: install
+
+You then install the product by clicking on the Test-tab of the External Method.
+
+

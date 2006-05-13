@@ -1,0 +1,55 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:five="http://namespaces.zope.org/five"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           xmlns:i18n="http://namespaces.zope.org/i18n"
+           i18n_domain="calendar">
+
+  <browser:addform
+     schema="Products.CalZope.browser.interfaces.IEventEditSchema"
+     class="Products.CalZope.browser.adding.AddingHelper"
+     content_factory="Products.CalZope.browser.adding.EventFactory"
+     name="addevent.html"
+     permission="calendar.CreateEvents"
+     arguments="dtstart dtend"
+     keyword_arguments="allday"
+     label="Add event"
+     template="add.pt"
+     >
+
+    <browser:widget
+      field="dtend"
+      class="Products.CalZope.browser.widget.EndDateWidget"
+      />
+
+    <browser:widget
+      field="categories"
+      class="Products.CalZope.browser.widget.SetTextAreaWidget"
+      />
+
+  </browser:addform>
+
+  <browser:addform
+     schema="Products.CalZope.browser.interfaces.IEventEditSchema"
+     class="Products.CalZope.browser.adding.AddingHelper"
+     content_factory="Products.CalZope.browser.adding.MeetingFactory"
+     name="addmeeting.html"
+     permission="calendar.CreateEvents"
+     arguments="dtstart dtend"
+     keyword_arguments="allday"
+     label="Add event"
+     template="add.pt"
+     >
+
+    <browser:widget
+      field="dtend"
+      class="Products.CalZope.browser.widget.EndDateWidget"
+      />
+
+    <browser:widget
+      field="categories"
+      class="Products.CalZope.browser.widget.SetTextAreaWidget"
+      />
+
+  </browser:addform>
+
+</configure>
