@@ -303,14 +303,14 @@ class CmfAttendeeSource(UniqueObject, SimpleItem):
 class CmfAttendee(Attendee):
     """An attende with notifications"""
 
-    def __init__(self, userid, title, attendee_type, on_invite=None):
+    def __init__(self, userid, title, attendee_type):
         if attendee_type == 'INDIVIDUAL':
             prefix = 'INDIVIDUAL'
         else:
             prefix = 'CALENDAR'
         attendee_id = '!'.join([prefix, userid])
         Attendee.inheritedAttribute('__init__')(
-            self, attendee_id, title, attendee_type, on_invite)
+            self, attendee_id, title, attendee_type)
         self.id = attendee_id
         self.userid = userid
         self.title = title
