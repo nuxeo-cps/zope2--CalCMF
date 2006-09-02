@@ -162,6 +162,8 @@ class CmfAttendeeSource(UniqueObject, SimpleItem):
         if prefix == 'INDIVIDUAL':
             members = getToolByName(self, 'portal_membership')
             home = members.getHomeFolder(name)
+            if home is None:
+                return None
             if CALENDAR_ID not in home.objectIds():
                 return None
             return home.calendar
