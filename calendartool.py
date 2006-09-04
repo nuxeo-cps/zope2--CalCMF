@@ -301,6 +301,12 @@ class CmfAttendeeSource(UniqueObject, SimpleItem):
 
         return calendar
 
+    def notifyEventEvent(self, event):
+        """Handler for notifications about changes."""
+        # We don't do anything at the moment, might want to send out
+        # an email or something later.
+        pass
+
 
 class CmfAttendee(Attendee):
     """An attende with notifications"""
