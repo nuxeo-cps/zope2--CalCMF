@@ -64,10 +64,9 @@ class CmfCalendar(CMFCatalogAware, Calendar, PortalContent, DefaultDublinCoreImp
         self._attendee_type = attendee_type
         DefaultDublinCoreImpl.__init__(self, title=title)
 
-    def getMainAttendee(self):
-        caltool = self._getAttendeeSource()
+    def getMainAttendeeId(self):
         if self._attendee_type == 'INDIVIDUAL':
-            return caltool.getAttendee('INDIVIDUAL!' + self._attendee_name)
+            return 'INDIVIDUAL!' + self._attendee_name
 
         if self._attendee_name == '':
             # A calendar needs an attendee, and the attendee needs an id.
@@ -76,8 +75,12 @@ class CmfCalendar(CMFCatalogAware, Calendar, PortalContent, DefaultDublinCoreImp
             # TODO: There is a possibility of id conflicts this way, but we
             # worry about that later. 
             self._attendee_name = '/'.join(self.getPhysicalPath())
-        attendee_id = '!'.join(('CALENDAR', self._attendee_name))
-        return caltool.getAttendee(attendee_id)
+
+        return 'CALENDAR!' + self._attendee_name
+
+    def getMainAttendee(self):
+        caltool = self._getAttendeeSource()
+        return caltool.getAttendee(self.getMainAttendeeId())
 
     def getAttendees(self):
         return [self.getMainAttendee()] + Calendar.getAttendees(self)
