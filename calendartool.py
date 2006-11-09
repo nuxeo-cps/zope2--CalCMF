@@ -147,12 +147,15 @@ class CmfAttendeeSource(UniqueObject, SimpleItem):
     def getAttendeesOfType(self, attendee_type):
         return self.findByName(None, attendee_type)
 
-    def getCurrentUserAttendee(self):
+    def getCurrentUserAttendeeId(self):
         securitymanager = getSecurityManager()
         id = securitymanager.getUser().getId()
         if not id:
             id = 'Anonymous'
-        return self.getAttendee('INDIVIDUAL!' + id)
+        return 'INDIVIDUAL!' + id
+
+    def getCurrentUserAttendee(self):
+        return self.getAttendee(self.getCurrentUserAttendeeId())
 
     def getAttendeeTypes(self):
         return ['INDIVIDUAL', 'WORKSPACE', 'RESOURCE']
