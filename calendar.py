@@ -32,7 +32,7 @@ from calendartool import CmfAttendee
 
 factory_type_information = {
      'id': 'CalCMF Calendar',
-     'title': 'A CalCMF Calendar',
+     'title': 'Calendar',
      'description': 'An advanced calendar for CMF',
      'icon': '++resource++calcmf.png',
      'product': 'CalCMF',
@@ -45,8 +45,13 @@ factory_type_information = {
                   'name': 'View',
                   'action': 'string:${object_url}/calendar.html',
                   'permissions': ('View',),
-                  'visible': 0,
-                  },)
+                  'visible': 0,},
+                 {'id': 'local_roles',
+                  'name': 'Sharing',
+                  'action': 'string:${object_url}/folder_localrole_form',
+                  'permissions': ('Manage properties',),
+                  'visible': 0,},
+              )
      }
 
 from zope.i18nmessageid import MessageFactory
