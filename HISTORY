@@ -1,3 +1,24 @@
+===========================================================
+Package: CalCMF 0.10.0
+===========================================================
+First release built by: lregebro at: 2007-01-28T10:58:23
+SVN Tag: https://svn.nuxeo.org/pub/Zope2/CalCMF/tags/0.10.0
+Build from: https://svn.nuxeo.org/pub/Zope2/CalCMF/trunk@50909
+
+Requires:
+~~~~~~~~~
+- CalZope 2.8.5
+- CalCore 2.2.1
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Added the new getMainAttendeeID method.
+
 *******************************************
 ** CalCMF V0.9.0 [R1 build 2006/05/04-16:21 by lregebro]
 ** SVN URL: https://svn.nuxeo.org/pub/CalCMF/trunk Revision: 45270
