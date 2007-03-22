@@ -69,6 +69,8 @@ class CmfAttendeeSource(UniqueObject, SimpleItem):
             members = getToolByName(self, 'portal_membership')
             try:
                 member = members.getMemberById(id)
+                if member is None:
+                    raise KeyError
                 # Use a get since the directory may be misconfigured:
                 title = member.getProperty('fullname', None)
                 if title is None:

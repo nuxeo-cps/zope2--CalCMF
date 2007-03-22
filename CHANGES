@@ -6,7 +6,7 @@ New features
 -
 Bug fixes
 ~~~~~~~~~
--
+- Deleted users caused an attribute Error.
 New internal features
 ~~~~~~~~~~~~~~~~~~~~~
 - 
